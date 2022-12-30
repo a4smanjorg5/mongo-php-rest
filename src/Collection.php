@@ -159,7 +159,7 @@ class Collection
         $kueri['collection'] = $this->name;
         $hasil = $this->db->action($method, $kueri);
         if (! $hasil->ok())
-            throw new \Exception($hasil->body);
+            throw new \Exception($hasil->body());
         $hasil = $hasil->json();
         switch ($method) {
         case 'findOne':
