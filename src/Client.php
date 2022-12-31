@@ -2,6 +2,8 @@
 
 namespace MongoDB\AtlasRest;
 
+use Symfony\Component\HttpKernel\Exception as HttpExcept;
+
 class Client
 {
     /**
