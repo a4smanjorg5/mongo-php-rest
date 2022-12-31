@@ -2,6 +2,8 @@
 
 namespace MongoDB\AtlasRest;
 
+use Symfony\Component\HttpKernel\Exception as HttpExcept;
+
 class Collection
 {
     /**
@@ -158,8 +160,6 @@ class Collection
     {
         $kueri['collection'] = $this->name;
         $hasil = $this->db->action($method, $kueri);
-        if (! $hasil->ok())
-            return $hasil->body();
         $hasil = $hasil->json();
         switch ($method) {
         case 'findOne':
